@@ -11,7 +11,7 @@ const messageElement = document.getElementById("message");
 
 async function loadDoctors() {
     try {
-        const response = await fetch("/doctors");
+        const response = await fetch("doctors");
 
         if (!response.ok) {
             throw new Error("Não foi possível carregar os médicos.");
@@ -56,7 +56,7 @@ async function loadAvailability() {
 
     try {
         const response = await fetch(
-            `/available?date=${date}&doctor_id=${doctorId}`
+            `available?date=${date}&doctor_id=${doctorId}`
         );
 
         const data = await response.json();
@@ -157,7 +157,7 @@ async function scheduleAppointment() {
     }
 
     try {
-        const response = await fetch("/appointments", {
+        const response = await fetch("appointments", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
