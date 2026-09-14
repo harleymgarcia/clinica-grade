@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Garde - Agendamento</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="page">
+
+        <header class="header">
+            <div class="logo-placeholder">
+                LOGO
+            </div>
+
+            <div class="header-title">
+                <h1>Clínica Garde</h1>
+                <p>Agendamento de Consultas</p>
+            </div>
+
+            <div class="header-tools">
+                <div id="dateTime" class="date-time"></div>
+
+                <div class="operator">
+                    Operadora: <strong>Lohany</strong>
+                </div>
+
+                <div class="tooltip-wrap">
+                    <button type="button" class="admin-button">
+                        Área Administrativa
+                    </button>
+
+                    <div class="tooltip-text admin-tooltip">
+                        Área prevista para login, cadastro de médicos,
+                        operadores, disponibilidade e relatórios.
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="card">
+
+            <div class="ai-avatar tooltip-wrap">
+                <div class="avatar-face" aria-label="Assistente de Inteligência Artificial">
+                    <span class="eye"></span>
+                    <span class="eye"></span>
+                    <span class="smile"></span>
+                </div>
+
+                <div class="tooltip-text ai-tooltip">
+                    Este atendimento poderá ser realizado também
+                    por uma Assistente de Inteligência Artificial.
+                </div>
+            </div>
+
+            <section>
+                <h2>Agende sua consulta</h2>
+                <p class="subtitle">
+                    Escolha o médico, a data e um horário disponível.
+                </p>
+            </section>
+
+            <div class="field">
+                <label for="doctor">Médico</label>
+                <select id="doctor">
+                    <option value="">Carregando médicos...</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="date">Escolha a data da consulta</label>
+                <p class="field-help">
+                    Clique no campo abaixo para selecionar o dia desejado.
+                </p>
+
+                <div class="date-row">
+                    <input type="date" id="date">
+                    <button id="searchButton">
+                        Consultar horários
+                    </button>
+                </div>
+            </div>
+
+            <div id="availabilitySection" class="availability hidden">
+                <label>Horários disponíveis</label>
+                <div id="slots" class="slots"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <section>
+                <h3>Dados do paciente</h3>
+            </section>
+
+            <div class="field">
+                <label for="patientName">Nome</label>
+                <input
+                    type="text"
+                    id="patientName"
+                    placeholder="Nome completo"
+                >
+            </div>
+
+            <div class="field">
+                <label for="patientEmail">E-mail</label>
+                <input
+                    type="email"
+                    id="patientEmail"
+                    placeholder="email@exemplo.com"
+                >
+            </div>
+
+            <div class="selected-info">
+                Horário selecionado:
+                <strong id="selectedTime">nenhum</strong>
+            </div>
+
+            <div id="message" class="message hidden"></div>
+
+            <button id="scheduleButton" class="schedule-button">
+                Agendar consulta
+            </button>
+
+        </main>
+
+        <footer>
+            Clínica Garde · Sistema de Agendamento
+        </footer>
+
+    </div>
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
